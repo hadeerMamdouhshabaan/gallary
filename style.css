@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+body{
+    height: 100svh;
+    max-height: 100svh;
+    width: 100svw;
+    max-width: 100svw;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.5fr 6fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "aside c1"
+    "aside f"
+    ;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+
+}
+header{
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:transparent;
+    padding: 20px;
+    border-bottom: 1px solid gainsboro;
+   
+}
+header ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+} 
+header ul a{
+    font-weight: bold;
+    color: blue;
+}
+aside{
+  grid-area: aside;
+  background-color: black;
+  color: white;
+
+ 
+}
+aside h2{
+    margin: 20px;
+}
+aside p{
+    margin: 20px;
+}
+aside ul{
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+    list-style-type: none;
+    margin: 20px; 
+
+}
+aside ul a{
+    color: white;
+}
+h1{
+    padding: 3px;
+}
+.content{
+    grid-area: c1; 
+
+}
+img{
+    width: 250px;
+    height: 200px;
+    padding: 3px;
+    
+    
+}
+footer{
+    grid-area: f;
+    background-color: rgb(245, 242, 242);
+    text-align: center;
+    color: rgb(19, 18, 18);
+    padding: 50px;
+}
+
+@media(max-width:750px){
+    aside{
+        display: none;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 6fr 1fr;
+        grid-template-areas: 
+        "header"
+        "c1"
+        "f"
+        ;
+        gap: 10px;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    
+    }
+    
+
+}
